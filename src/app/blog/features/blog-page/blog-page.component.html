@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<section class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-[#2e3192] mb-10">Últimas publicaciones</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div *ngFor="let blog of datablog"
+                class="bg-[#f8fafe] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                <img [src]="blog.image" [alt]="blog.title" class="w-full h-48 object-cover" />
+                <div class="p-6">
+                    <span class="text-sm text-blue-900 uppercase">{{ blog.type }}</span>
+                    <h3 [routerLink]="[blog.id]"
+                        class="mt-2 text-xl font-semibold text-gray-800 hover:text-blue-700 cursor-pointer">
+                        {{ blog.title }}
+                    </h3>
+
+                    <a [routerLink]="[blog.id]" class="inline-block mt-4 text-blue-600 hover:underline font-medium">
+                        Leer más →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

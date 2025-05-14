@@ -13,6 +13,11 @@ export const routes: Routes = [
         //
     },
     {
+        path: 'blog',
+        loadChildren: () => import('./blog/features/blog.routes'),
+        //
+    },
+    {
         path: '**',
         redirectTo: 'asac',
     },
